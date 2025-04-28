@@ -1,14 +1,29 @@
-<!-- Redirect all page to https://www.moonshot.cn/ -->
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0;url=https://www.moonshot.cn/">
-</head>
+    <script>
+        // 特殊 URL 列表
+        const exceptionUrls = [
+            "http://moonshot.ai/CombiBench/",
+            "https://moonshot.ai/CombiBench/",
+            "http://moonshotai.github.io/CombiBench/",
+            "https://moonshotai.github.io/CombiBench/"
+        ];
 
+        // 获取当前页面的 URL
+        const currentPageUrl = window.location.href;
+
+        // 检查当前 URL 是否在特例列表中
+        const isException = exceptionUrls.includes(currentPageUrl);
+
+        // 如果当前 URL 不在特例列表中，则跳转到目标 URL
+        if (!isException) {
+            window.location.href = "https://www.moonshot.cn/";
+        }
+    </script>
+</head>
 <body>
     Redirecting... <a href="https://www.moonshot.cn/">Click here if you are not redirected.</a>
 </body>
-
 </html>
